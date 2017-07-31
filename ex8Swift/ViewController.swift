@@ -90,7 +90,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func btnSearchDid(_ sender: Any) {
-        searchMusic(key: txtSearch.text!)
+        if let key = txtSearch.text {
+            searchMusic(key: key)
+        }
     }
 
 }
