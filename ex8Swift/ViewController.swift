@@ -72,7 +72,8 @@ class ViewController: UIViewController, UITableViewDataSource {
                         musicEx.musicName = musicInfor["trackName"] as! String
                         musicEx.artist = musicInfor["artistName"] as! String
                         musicEx.genreName = musicInfor["primaryGenreName"] as! String
-                        musicEx.date = musicInfor["releaseDate"] as! String
+                        let date = musicInfor["releaseDate"] as! String
+                        musicEx.date = date.substring(to: date.index(date.startIndex, offsetBy: 16))
                         musicEx.price = musicInfor["trackPrice"] as! Double
                         musicEx.imageURL = musicInfor["artworkUrl100"] as! String
                         musicListClone.append(musicEx)
